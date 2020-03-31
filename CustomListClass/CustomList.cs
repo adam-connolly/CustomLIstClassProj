@@ -41,29 +41,24 @@ namespace CustomListClass
             else
             {
                 int i = count;
-                SwapArray(ref items);
+                SwapArray();
                 items[i] = item;
                 count++;
             }
         }
-        private T[] SwapArray(ref T[] oldArray)
+        private void SwapArray()
         {
-            //instantiate newArray at 2x capacity
-            T[] newArray = new T[oldArray.Length * 2];
-            Capacity = newArray.Length;
-            //assign to temp value
-            T[] tempArray = new T[oldArray.Length];
-            
-            //transfer values over to corresponding indices
-            for (int i = 0; i < oldArray.Length; i++)
+            T[] newArray = new T[capacity *= 2];            
+            for (int i = 0; i < items.Length; i++)
             {
-                newArray[i] = oldArray[i];
+                newArray[i] = items[i];
             }
-            //reassign newArray to oldArray
-            tempArray = oldArray;
-            oldArray = newArray;
-            //delete oldArray
-            return oldArray;
+            items = newArray;
         }
+        public void Remove()
+        {
+
+        }
+
     }
 }

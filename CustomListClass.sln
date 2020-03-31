@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomList", "CustomListCla
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomListTesting", "AddMethodTests\CustomListTesting.csproj", "{CC05D149-1AC5-41F0-94BA-A796AD22915F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemoveMethodTesting", "RemoveMethodTesting\RemoveMethodTesting.csproj", "{71F2F4C6-DC47-492E-A57D-24CB8A7845EB}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{CC05D149-1AC5-41F0-94BA-A796AD22915F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CC05D149-1AC5-41F0-94BA-A796AD22915F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CC05D149-1AC5-41F0-94BA-A796AD22915F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{71F2F4C6-DC47-492E-A57D-24CB8A7845EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{71F2F4C6-DC47-492E-A57D-24CB8A7845EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{71F2F4C6-DC47-492E-A57D-24CB8A7845EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{71F2F4C6-DC47-492E-A57D-24CB8A7845EB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
