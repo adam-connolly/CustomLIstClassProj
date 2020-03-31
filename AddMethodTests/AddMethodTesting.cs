@@ -3,7 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CustomListClass;
 
 
-namespace AddMethodTests
+namespace CustomListClass
 {
     [TestClass]
     public class AddMethodTesting
@@ -32,9 +32,9 @@ namespace AddMethodTests
             int actualCount;
             //act
             testList.Add(number1);
-            //actualCount = testList[0];
+            actualCount = testList[0];
             //assert
-            //Assert.AreEqual(expectedCount, actualCount);
+            Assert.AreEqual(expectedCount, actualCount);
         }
         [TestMethod]
         public void Add_CheckCapacity_CapacityIs4()
@@ -60,10 +60,10 @@ namespace AddMethodTests
             int actualCapacity;
             //act
             testList.Add(value1);
-            testList.Add(value1);
-            testList.Add(value1);
-            testList.Add(value1);
-            testList.Add(value1);
+            testList.Add(2);
+            testList.Add(3);
+            testList.Add(4);
+            testList.Add(5);
             actualCapacity = testList.Capacity;
             //assert
             Assert.AreEqual(expectedCapacity, actualCapacity);
@@ -96,8 +96,8 @@ namespace AddMethodTests
         {
             //arrange
             CustomList<int> testList = new CustomList<int>();
-            int expectedValue = 5;
-            int actualValue;
+            string expected = "123456";
+            string actual = "";
 
             //act
             testList.Add(1);
@@ -107,10 +107,13 @@ namespace AddMethodTests
             testList.Add(5);
             testList.Add(6);
 
-            actualValue = testList[4];
+            for(int i = 0; i < testList.Count; i++)
+            {
+                actual += testList[i];
+            }
 
             //assert
-            Assert.AreEqual(expectedValue, actualValue);
+            Assert.AreEqual(expected, actual);
         }
     }
 }
