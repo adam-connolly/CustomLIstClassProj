@@ -32,9 +32,9 @@ namespace AddMethodTests
             int actualCount;
             //act
             testList.Add(number1);
-            actualCount = testList[0];
+            //actualCount = testList[0];
             //assert
-            Assert.AreEqual(expectedCount, actualCount);
+            //Assert.AreEqual(expectedCount, actualCount);
         }
         [TestMethod]
         public void Add_CheckCapacity_CapacityIs4()
@@ -90,6 +90,27 @@ namespace AddMethodTests
             actualCapacity = testList.Capacity;
             //assert
             Assert.AreEqual(expectedCapacity, actualCapacity);
+        }
+        [TestMethod]
+        public void Add_CheckListOrder_DisplayListInOrderCreated()
+        {
+            //arrange
+            CustomList<int> testList = new CustomList<int>();
+            int expectedValue = 5;
+            int actualValue;
+
+            //act
+            testList.Add(1);
+            testList.Add(2);
+            testList.Add(3);
+            testList.Add(4);
+            testList.Add(5);
+            testList.Add(6);
+
+            actualValue = testList[4];
+
+            //assert
+            Assert.AreEqual(expectedValue, actualValue);
         }
     }
 }

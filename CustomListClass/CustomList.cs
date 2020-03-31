@@ -19,5 +19,16 @@ namespace CustomListClass
             capacity = 4;
             items = new T[capacity];
         }
+        public void Add(T item)
+        {
+            if(Count <= Capacity)
+            {
+                for(int i = Count; i < Capacity; i++)
+                {
+                    items[i] = item;
+                    Count++;
+                }
+            }           
+        }
     }
 }
