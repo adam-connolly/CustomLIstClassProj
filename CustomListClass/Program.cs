@@ -10,13 +10,18 @@ namespace CustomListClass
     {
         static void Main(string[] args)
         {
-            List<int> newList = new List<int>();
-            newList.Add(1);
-            newList.Add(2);
-            newList.Add(3);
-            newList.Add(4);
-            newList.Add(5);
-            newList.Remove(3);
+            //CustomList<int> intList = new CustomList<int>();
+            //intList.Add(1);
+            //intList.Add(2);
+            //intList.Add(3);
+            //intList.Add(4);
+            //intList.Add(5);
+            //intList.Add(6);
+            //foreach(int number in intList)
+            //{
+            //    Console.WriteLine(number);
+            //}
+            //Console.ReadLine();
         }
     }
 }

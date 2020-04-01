@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CustomListClass
 {
-    public class CustomList<T>
+    public class CustomList<T> : IEnumerable
     {
         int count;
         public int Count { get { return count; } }
@@ -86,5 +87,12 @@ namespace CustomListClass
             return doesContain;
         }
 
+        public IEnumerator GetEnumerator()
+        {
+            for (int i = 0; i < count; i++)
+            {
+                yield return items[i];
+            }
+        }
     }
 }
