@@ -55,7 +55,7 @@ namespace CustomListClass
             }
             items = newArray;
         }
-        public void Remove()
+        public void Remove(T item)
         {
 
         }
