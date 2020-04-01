@@ -115,5 +115,17 @@ namespace CustomListClass
             //assert
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void Add_AddIntAtIndex_IndexOutOfBounds()
+        {
+            //arrange
+            CustomList<int> testList = new CustomList<int>();
+            int value1 = 1;
+
+            //act
+            testList[4] = value1;
+            
+        }
     }
 }

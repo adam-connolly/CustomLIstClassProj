@@ -17,10 +17,18 @@ namespace CustomListClass
         {
             get
             {
+                if (i >= count || i < 0)
+                {
+                    throw new ArgumentOutOfRangeException();
+                }                
                 return items[i];
             }
             set
             {
+                if (i >= count || i < 0)
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
                 items[i] = value;
             }
         }
@@ -32,7 +40,7 @@ namespace CustomListClass
         }
         public void Add(T item)
         {
-            if(Count < Capacity)
+            if(count < capacity)
             {
                 int i = count;
                 items[i] = item;
@@ -55,9 +63,27 @@ namespace CustomListClass
             }
             items = newArray;
         }
-        public void Remove(T item)
+        public bool Remove(T item)
         {
-
+            bool doesContain = false;
+            T[] temp = new T[capacity];
+            for(int i = 0, j = 0; i < count; i++, j++)
+            {                   
+                if (items[i].Equals(item))
+                {
+                    j--;                    
+                    doesContain = true;
+                }
+                else
+                {
+                    temp[j] = items[i];
+                }
+            }
+            if (doesContain)
+            {
+                count--;
+            }
+            return doesContain;
         }
 
     }

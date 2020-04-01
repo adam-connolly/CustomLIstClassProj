@@ -33,7 +33,7 @@ namespace AddMethodTests
             int value2 = 2;
             int value3 = 3;
             bool expectedResult = true;
-            bool actualResult;
+            bool actualResult = false;
 
             //act
             testList.Add(value1);
@@ -52,7 +52,7 @@ namespace AddMethodTests
             Assert.AreEqual(expectedResult, actualResult);
         }
         [TestMethod]
-        [ExpectedException(typeof(IndexOutOfRangeException))]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void Remove_RemoveIntAtIndex_IndexOutOfBounds()
         {
             //arrange
@@ -79,7 +79,10 @@ namespace AddMethodTests
             testList.Add(value1);
             testList.Add(value2);
             testList.Add(value3);
-            testList.Remove(4);
+            actualReturn = testList.Remove(4);
+
+            //assert
+            Assert.AreEqual(expectedReturn, actualReturn);
         }
         [TestMethod]
         public void Remove_RemoveAtSpecificIndex_SuccessfullyRemoved()
@@ -94,7 +97,9 @@ namespace AddMethodTests
             testList.Add(value1);
             testList.Add(value2);
             testList.Add(value3);
-            testList.Remove(testList[2]);
+            actualResult = testList.Remove(testList[2]);
+
+            Assert.AreEqual(expectedResult, actualResult);
         }
     }
 }
