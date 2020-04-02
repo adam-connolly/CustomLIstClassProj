@@ -21,7 +21,7 @@ namespace CustomListClass
                 if (i >= count || i < 0)
                 {
                     throw new ArgumentOutOfRangeException();
-                }                
+                }
                 return items[i];
             }
             set
@@ -41,7 +41,7 @@ namespace CustomListClass
         }
         public void Add(T item)
         {
-            if(count < capacity)
+            if (count < capacity)
             {
                 int i = count;
                 items[i] = item;
@@ -57,7 +57,7 @@ namespace CustomListClass
         }
         private void SwapArray()
         {
-            T[] newArray = new T[capacity *= 2];            
+            T[] newArray = new T[capacity *= 2];
             for (int i = 0; i < items.Length; i++)
             {
                 newArray[i] = items[i];
@@ -68,11 +68,11 @@ namespace CustomListClass
         {
             bool doesContain = false;
             T[] temp = new T[capacity];
-            for(int i = 0, j = 0; i < count; i++, j++)
-            {                   
+            for (int i = 0, j = 0; i < count; i++, j++)
+            {
                 if (items[i].Equals(item))
                 {
-                    j--;                    
+                    j--;
                     doesContain = true;
                 }
                 else
@@ -97,7 +97,7 @@ namespace CustomListClass
         public string MakeString()
         {
             string newString = "";
-            if(count <= 0)
+            if (count <= 0)
             {
                 Console.WriteLine("Empty List. Cannot create list.");
                 return newString;
@@ -109,11 +109,39 @@ namespace CustomListClass
                     newString += items[i];
                 }
                 return newString;
-            }            
+            }
         }
         public CustomList<T> Zip(CustomList<T> list)
         {
-            T[] temp = new T[capacity *= 2];
+            CustomList<T> newList = new CustomList<T>();
+            if (Count >= list.Count)
+            {
+                for (int i = 0; i < Count; i++)
+                {
+                    newList.Add(items[i]);
+                    if (list.Count > i)
+                    {
+                        newList.Add(list[i]);
+                    }
+                }
+            }
+            else if (Count < list.Count)
+            {
+                for (int i = 0; i < list.Count; i++)
+                {
+                    if (Count > i)
+                    {
+                        newList.Add(items[i]);
+                    }
+                    newList.Add(list[i]);
+                }
+            }
+            return newList;
         }
+        
+        //public static CustomList<T> operator + (CustomList<T> list1, CustomList<T> list2)
+        //{
+
+        //}
     }
 }

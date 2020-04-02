@@ -12,6 +12,7 @@ namespace AddMethodTests
         {
             CustomList<int> testList1 = new CustomList<int>();            
             CustomList<int> testList2 = new CustomList<int>();
+            CustomList<int> zippedList;
             string expectedResult = "123456";
             string actualResult;
 
@@ -22,8 +23,8 @@ namespace AddMethodTests
             testList2.Add(4);
             testList2.Add(6);
 
-            testList1.Zip(testList2);
-            actualResult = testList1.MakeString();
+            zippedList = testList1.Zip(testList2);
+            actualResult = zippedList.MakeString();
 
             Assert.AreEqual(expectedResult, actualResult);
         }
@@ -32,6 +33,7 @@ namespace AddMethodTests
         {
             CustomList<string> testList1 = new CustomList<string>();
             CustomList<string> testList2 = new CustomList<string>();
+            CustomList<string> zippedList;
             string expectedResult = "GoodMorningHelloWorld";
             string actualResult;
 
@@ -40,8 +42,8 @@ namespace AddMethodTests
             testList2.Add("Morning");
             testList2.Add("World");
 
-            testList1.Zip(testList2);
-            actualResult = testList1.MakeString();
+            zippedList = testList1.Zip(testList2);
+            actualResult = zippedList.MakeString();
 
             Assert.AreEqual(expectedResult, actualResult);
         }
@@ -50,6 +52,7 @@ namespace AddMethodTests
         {
             CustomList<int> testList1 = new CustomList<int>();
             CustomList<int> testList2 = new CustomList<int>();
+            CustomList<int> zippedList;
             string expectedResult = "1234567890";
             string actualResult;
 
@@ -64,8 +67,8 @@ namespace AddMethodTests
             testList2.Add(4);
             testList2.Add(6);
 
-            testList1.Zip(testList2);
-            actualResult = testList1.MakeString();
+            zippedList = testList1.Zip(testList2);
+            actualResult = zippedList.MakeString();
 
             Assert.AreEqual(expectedResult, actualResult);
         }
@@ -74,6 +77,7 @@ namespace AddMethodTests
         {
             CustomList<int> testList1 = new CustomList<int>();
             CustomList<int> testList2 = new CustomList<int>();
+            CustomList<int> zippedList;
             string expectedResult = "1234567890";
             string actualResult;
 
@@ -88,8 +92,8 @@ namespace AddMethodTests
             testList2.Add(9);
             testList2.Add(0);
 
-            testList1.Zip(testList2);
-            actualResult = testList1.MakeString();
+            zippedList = testList1.Zip(testList2);
+            actualResult = zippedList.MakeString();
 
             Assert.AreEqual(expectedResult, actualResult);
         }
@@ -98,6 +102,7 @@ namespace AddMethodTests
         {
             CustomList<int> testList1 = new CustomList<int>();
             CustomList<int> testList2 = new CustomList<int>();
+            CustomList<int> zippedList;
             int expectedResult = 16;
             int actualResult;
 
@@ -112,8 +117,8 @@ namespace AddMethodTests
             testList2.Add(9);
             testList2.Add(0);
 
-            testList1.Zip(testList2);
-            actualResult = testList1.Capacity;
+            zippedList = testList1.Zip(testList2);
+            actualResult = zippedList.Capacity;
 
             Assert.AreEqual(expectedResult, actualResult);
         }
@@ -122,6 +127,7 @@ namespace AddMethodTests
         {
             CustomList<int> testList1 = new CustomList<int>();
             CustomList<int> testList2 = new CustomList<int>();
+            CustomList<int> zippedList;
             string expectedResult = "135";
             string actualResult;
 
@@ -129,8 +135,8 @@ namespace AddMethodTests
             testList1.Add(3);
             testList1.Add(5);
 
-            testList1.Zip(testList2);
-            actualResult = testList1.MakeString();
+            zippedList = testList1.Zip(testList2);
+            actualResult = zippedList.MakeString();
 
             Assert.AreEqual(expectedResult, actualResult);
         }
@@ -139,6 +145,7 @@ namespace AddMethodTests
         {
             CustomList<int> testList1 = new CustomList<int>();
             CustomList<int> testList2 = new CustomList<int>();
+            CustomList<int> zippedList;
             string expectedResult = "246";
             string actualResult;
 
@@ -146,8 +153,8 @@ namespace AddMethodTests
             testList2.Add(4);
             testList2.Add(6);
 
-            testList1.Zip(testList2);
-            actualResult = testList1.MakeString();
+            zippedList = testList1.Zip(testList2);
+            actualResult = zippedList.MakeString();           
 
             Assert.AreEqual(expectedResult, actualResult);
         }
