@@ -138,10 +138,19 @@ namespace CustomListClass
             }
             return newList;
         }
-        
-        //public static CustomList<T> operator + (CustomList<T> list1, CustomList<T> list2)
-        //{
 
-        //}
+        public static CustomList<T> operator +(CustomList<T> list1, CustomList<T> list2)
+        {
+            CustomList<T> newList = new CustomList<T>();
+            foreach(T item in list1)
+            {
+                newList.Add(item);
+            }
+            foreach(T item in list2)
+            {
+                newList.Add(item);
+            }
+            return newList;
+        }
     }
 }
