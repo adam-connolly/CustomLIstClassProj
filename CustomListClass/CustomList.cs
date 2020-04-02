@@ -80,6 +80,7 @@ namespace CustomListClass
                     temp[j] = items[i];
                 }
             }
+            items = temp;
             if (doesContain)
             {
                 count--;
@@ -110,6 +111,15 @@ namespace CustomListClass
                 }
                 return newString;
             }
+        }
+        public CustomList<T> Copy()
+        {
+            CustomList<T> newList = new CustomList<T>();
+            for (int i = 0; i < Count; i++)
+            {
+                newList.Add(items[i]);
+            }
+            return newList;
         }
         public CustomList<T> Zip(CustomList<T> list)
         {
@@ -149,6 +159,15 @@ namespace CustomListClass
             foreach(T item in list2)
             {
                 newList.Add(item);
+            }
+            return newList;
+        }
+        public static CustomList<T> operator -(CustomList<T> list1, CustomList<T> list2)
+        {
+            CustomList<T> newList = list1.Copy();
+            for (int i = 0; i < list2.Count; i++)
+            {
+                newList.Remove(list2[i]);
             }
             return newList;
         }
