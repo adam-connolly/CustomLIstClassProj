@@ -117,5 +117,39 @@ namespace AddMethodTests
 
             Assert.AreEqual(expectedResult, actualResult);
         }
+        [TestMethod]
+        public void Zip_PassedListIsEmpty_ReturnsOriginalListAsIs()
+        {
+            CustomList<int> testList1 = new CustomList<int>();
+            CustomList<int> testList2 = new CustomList<int>();
+            string expectedResult = "135";
+            string actualResult;
+
+            testList1.Add(1);
+            testList1.Add(3);
+            testList1.Add(5);
+
+            testList1.Zip(testList2);
+            actualResult = testList1.MakeString();
+
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+        [TestMethod]
+        public void Zip_OriginalListIsEmpty_ReturnsPassedListAsIs()
+        {
+            CustomList<int> testList1 = new CustomList<int>();
+            CustomList<int> testList2 = new CustomList<int>();
+            string expectedResult = "246";
+            string actualResult;
+
+            testList2.Add(2);
+            testList2.Add(4);
+            testList2.Add(6);
+
+            testList1.Zip(testList2);
+            actualResult = testList1.MakeString();
+
+            Assert.AreEqual(expectedResult, actualResult);
+        }
     }
 }
