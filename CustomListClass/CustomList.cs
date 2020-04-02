@@ -111,5 +111,9 @@ namespace CustomListClass
                 return newString;
             }            
         }
+        public CustomList<T> Zip(CustomList<T> list)
+        {
+            T[] temp = new T[capacity *= 2];
+        }
     }
 }
