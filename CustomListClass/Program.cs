@@ -10,18 +10,29 @@ namespace CustomListClass
     {
         static void Main(string[] args)
         {
-            //CustomList<int> intList = new CustomList<int>();
-            //intList.Add(1);
-            //intList.Add(2);
-            //intList.Add(3);
-            //intList.Add(4);
-            //intList.Add(5);
-            //intList.Add(6);
+            string actual = "";
+            CustomList<string> intList = new CustomList<string>();
+            intList.Add("Adam ");
+            intList.Add("Connolly ");
+            intList.Add("Adam ");
+            intList.Add("Connolly ");
+            intList.Add("Adam ");
+            intList.Add("Connolly ");
+
+            for (int i = 0; i < intList.Count; i++)
+            {
+                actual += intList[i];
+            }
             //foreach(int number in intList)
             //{
             //    Console.WriteLine(number);
             //}
             //Console.ReadLine();
+
+            StringBuilder stringBuilder = new StringBuilder(actual);
+
+            Console.WriteLine(stringBuilder.ToString());
+            Console.ReadLine();
         }
     }
 }

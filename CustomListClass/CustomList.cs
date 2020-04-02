@@ -94,5 +94,22 @@ namespace CustomListClass
                 yield return items[i];
             }
         }
+        public string MakeString()
+        {
+            string newString = "";
+            if(count <= 0)
+            {
+                Console.WriteLine("Empty List. Cannot create list.");
+                return newString;
+            }
+            else
+            {
+                for (int i = 0; i < count; i++)
+                {
+                    newString += items[i];
+                }
+                return newString;
+            }            
+        }
     }
 }
