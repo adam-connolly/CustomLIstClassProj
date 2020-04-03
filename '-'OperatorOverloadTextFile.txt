@@ -1,0 +1,50 @@
+"-" Operator Overload in CustomListClass
+Removes values from one list based on the contents of a second list
+Syntax: public static CustomList<T> - (CustomList<T> list1, CustomList<T> list2);
+
+Parameters: list1, list2 (CustomList<T>)
+List1 is the list from which list2 values will be subtracted.
+
+Return type: Will return a new CustomList<T>.
+
+Example: In this example, I have provided a unit test for a successful removal of a common value between two CustomList<int>:
+        public void Subtract_RemoveValue_ValueIsRemovedFromList()
+        {
+            CustomList<int> list1 = new CustomList<int>();
+            CustomList<int> list2 = new CustomList<int>();
+            CustomList<int> result;
+            string expectedResult = "124";
+            string actualResult;
+
+            list1.Add(1);
+            list1.Add(2);
+            list1.Add(3);
+            list1.Add(4);
+            list2.Add(3);
+
+            result = list1 - list2;
+            actualResult = result.MakeString();
+            Console.WriteLine(actualResult);
+        }
+        The display will then read: "124"
+
+This next example is an unsuccessful removal of a value because the first list does not contain the value
+        public void Subtract_RemoveValue_ValueIsNotRemovedFromList()
+        {
+            CustomList<int> list1 = new CustomList<int>();
+            CustomList<int> list2 = new CustomList<int>();
+            CustomList<int> result;
+            string expectedResult = "1234";
+            string actualResult;
+
+            list1.Add(1);
+            list1.Add(2);
+            list1.Add(3);
+            list1.Add(4);
+            list2.Add(5);
+
+            result = list1 - list2;
+            actualResult = result.MakeString();
+            Console.WriteLine(actualResult);
+        }
+        The display will then read: "1234"
